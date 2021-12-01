@@ -1,4 +1,12 @@
 .features {
-    background-color: $color-grey-light-2;
     grid-column: center-start / center-end;
+
+    margin: 15rem 0;
+
+    display: grid;
+    // we do not need to specify rows -- our items will be placed in an implicit grid
+    // we can specify rows (ie. grid-template-rows: auto auto;) but this is redundant given that we're creating an implicit grid which will do this regardless.
+    // dotted lines in the DOM means those are implicit row tracks of an implicit grid
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 6rem;
 }

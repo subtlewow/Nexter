@@ -42,7 +42,11 @@ body {
     // we want our content to adapt when resized
     // always think about responsive design initially when structuring the page layout for our grid container
 
-    // we want to use min-content or auto (both work) b/c we want enough space 
+    // we want to use min-content or auto (both work) b/c on resize we want our row to grow to have enough space to fit all the content
+    // without overflow, so we can use min-content :-)
+
+    // on resize we want the houses, gallery and footer sections to maintain/adjust its width when resized accordingly
+    // so we can use min-content for all three rows using the repeat() function
     grid-template-rows: 80vh min-content 40vw repeat(3, min-content);
 
     // OPTIONAL: we can also name the rows, but there is more emphasis on the columns
@@ -51,10 +55,5 @@ body {
     // we can use a minmax() function to fix this.
     // the minmax function ensures the whitespace does not fall below 60px even when resized, so basically this whitespace column acting as a margin can resize itself accordingly to the window size to be between 60px and 1fr so that both sides will have the same width.
     grid-template-columns: [sidebar-start] 8rem [sidebar-end full-start] minmax(6rem, 1fr) [center-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end]) [center-end] minmax(6rem, 1fr) [full-end];
-
-    & > * {
-        padding: 40px;
-        font-size: 3rem;
-    }
 }
 

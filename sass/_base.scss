@@ -1,0 +1,60 @@
+// COLOR VARIABLES
+$color-primary: #c69963;
+$color-primary-dark: #B28451;
+
+$color-secondary: #101d2c;
+
+$color-grey-light-1: #f9f7f6;
+$color-grey-light-2: #aaa;
+
+$color-grey-dark-1: #54483A;
+$color-grey-dark-2: #6D5D4B;
+
+// FONT VARIABLES
+$font-primary: 'Nunito', sans-serif;
+$font-display: 'Josefin Sans', sans-serif;
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+html {
+    font-size: 62.5%;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: $font-primary;
+    color: $color-grey-dark-2;
+    font-weight: 300;
+    line-height: 1.6;
+}
+
+// Container GRID
+.container {
+    display: grid;
+
+    // ***REVIEW THIS***
+    // we want our content to adapt when resized
+    // always think about responsive design initially when structuring the page layout for our grid container
+
+    // we want to use min-content or auto (both work) b/c we want enough space 
+    grid-template-rows: 80vh min-content 40vw repeat(3, min-content);
+
+    // OPTIONAL: we can also name the rows, but there is more emphasis on the columns
+
+    // on resize the 1fr whitespace column will automatically change size resulting in uneven margins on both sides
+    // we can use a minmax() function to fix this.
+    // the minmax function ensures the whitespace does not fall below 60px even when resized, so basically this whitespace column acting as a margin can resize itself accordingly to the window size to be between 60px and 1fr so that both sides will have the same width.
+    grid-template-columns: [sidebar-start] 8rem [sidebar-end full-start] minmax(6rem, 1fr) [center-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end]) [center-end] minmax(6rem, 1fr) [full-end];
+
+    & > * {
+        padding: 40px;
+        font-size: 3rem;
+    }
+}
+

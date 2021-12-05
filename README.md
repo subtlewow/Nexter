@@ -6,6 +6,6 @@ Project using only HTML and SCSS to learn development with CSS Grid and implemen
 - Using Media Queries at different viewport dimensions for different devices
 - CSS Grid positioning (grid-template-columns, grid-template-rows etc..) and using functions such as min-content, max-content, auto-fit, auto-fill and minmax(). 
 - Understanding and positioning using Explicit vs Implicit Grid
-- Practice development with SCSS, and using NPM packages to install SASS locally.
+- Practice development with SCSS, Partials, and using NPM packages to install SASS locally.
 
 Finished project: https://subtlewow.github.io/Nexter/
